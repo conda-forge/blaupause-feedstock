@@ -1,5 +1,5 @@
 {% set name = "blaupause" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b1e561a228aae9dee8acfd62a9158a4d28c8d3360a0f69072c102dd879a4d3f8
+  sha256: ae02e022cd4177f9b950285d6f0ccf9aface3341b3d601892ce7e8190233e52b
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
+  host:
     - python >=3.8
     - pip
   run:
@@ -34,7 +34,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A sample Python-based package that can be used as a tutorial for setting up a project.'
+  summary: A sample Python-based package that can be used as a tutorial for setting up a project.
   description: |
     A sample Python-based package that can be used as a tutorial for setting up a project.
   doc_url: https://blaupause.readthedocs.io/
